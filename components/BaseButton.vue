@@ -1,5 +1,5 @@
 <template>
-  <button :class="`btn ${btnStyle} ${btnColor}`">
+  <button :class="`btn ${btnStyle} ${btnColor}`" @click="$emit('btnClicked')">
     <IconCSS v-if="props.icon" class="btn-icon" :name="props.icon" :size="iconSize" />
     <span v-if="props.text" class="btn-text">
       {{ props.text }}
@@ -28,8 +28,6 @@ const textSizing = {
   lg: "30px",
 };
 
-console.log(props);
-
 const iconSize = iconSizing[props.size];
 const textSize = textSizing[props.size];
 const btnStyle = props.type === "outline" ? "btn-outline" : "btn-filled";
@@ -55,20 +53,35 @@ const btnColor = props.color === "default" ? "btn-default" : "btn-accent";
   color: $fontColor;
   background-color: transparent;
   border: 2px solid $fontColor;
+  &:hover {
+    color: $fontColorHover;
+    border-color: $fontColorHover;
+  }
 
   &.btn-accent {
     color: $accentColor;
     border-color: $accentColor;
+    &:hover {
+      color: $accentColorHover;
+      border-color: $accentColorHover;
+    }
   }
 }
 
 .btn-filled {
   color: $bgColor;
   background-color: $fontColor;
+  &:hover {
+    color: $bgColorHover;
+    background-color: $fontColorHover;
+  }
 
   &.btn-accent {
     color: $fontColor;
     background-color: $accentColor;
+    &:hover {
+      background-color: $accentColorHover;
+    }
   }
 }
 
