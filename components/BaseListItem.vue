@@ -1,5 +1,5 @@
 <template>
-  <div class="list-item">
+  <div class="list-item" @click="$emit('itemClicked', props.tmdbId)">
     <div class="list-item-image">
       <NuxtImg
         :src="props.image"
@@ -16,6 +16,7 @@
 
 <script setup lang="ts">
 const props = defineProps<{
+  tmdbId: string;
   title: string;
   image: string;
   type: "User" | "Movie" | "TV Show" | "Watchlist";
@@ -30,6 +31,7 @@ const props = defineProps<{
 .list-item {
   font-family: $bodyFont;
   margin: 0 50px;
+  padding: 0 15px 0 0;
   width: 100%;
   display: grid;
   align-items: center;
