@@ -3,3 +3,28 @@
 html {
     background-color: $bgColor;
 }
+
+body {
+    font-family: $bodyFont;
+    font-size: $pSize;
+    font-weight: $bodyRegular;
+    color: $fontColor;
+}
+
+h1, h2 {
+    font-family: $headingFont;
+    font-weight: $headingRegular;
+}
+
+h1 {
+    font-size: $h1Size;
+}
+
+h2 {
+    font-size: $h2Size;
+}
+
+h3 {
+    font-size: $h3Size;
+    font-weight: $headingLight;
+}
