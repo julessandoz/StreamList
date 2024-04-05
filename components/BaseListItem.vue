@@ -5,7 +5,6 @@
         provider="tmdb"
         :src="image"
         :alt="`${title} poster`"
-        :placeholder="[50, 50, 20, 5]"
         :class="type === 'User' ? 'rounded' : 'square'"
       />
     </div>
@@ -62,6 +61,7 @@ function itemClick(e: MouseEvent) {
   margin: 0 50px;
   padding: 0 15px 0 0;
   width: 100%;
+  max-width: calc(100% - 100px);
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 6fr 3fr 3fr 1fr;
@@ -90,6 +90,10 @@ function itemClick(e: MouseEvent) {
 
 .list-item-title {
   justify-self: start;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .list-item-type,
@@ -105,5 +109,60 @@ function itemClick(e: MouseEvent) {
   justify-content: flex-end;
   align-items: center;
   justify-self: end;
+}
+
+@media (max-width: 768px) {
+  .list-item {
+    grid-template-columns: 50px repeat(2, 0.25fr) repeat(2, 1fr) 24px;
+    grid-template-rows: 1fr 0.5fr;
+    height: 50px;
+    gap: 0 1em;
+  }
+
+  .list-item-image {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .list-item-title {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    align-self: bottom;
+    max-height: 25px;
+    margin: 0;
+  }
+
+  .list-item-type {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .list-item-year {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+
+  .list-item-type,
+  .list-item-year {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    justify-self: baseline;
+    align-self: center;
+    max-height: 15px;
+    margin: 0;
+  }
+
+  .list-item-icon-wrapper {
+    grid-column-start: 6;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-self: start;
+    max-height: 50px;
+  }
 }
 </style>
