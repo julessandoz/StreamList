@@ -6,9 +6,8 @@
       provider="tmdb"
       :src="`${image}`"
       :alt="title + ' poster'"
-      :placeholder="[180, 180, 60, 5]"
     />
-    <p class="suggestion-title">{{ truncTitle }}</p>
+    <p class="suggestion-title">{{ title }}</p>
   </div>
 </template>
 
@@ -22,11 +21,7 @@ const props = defineProps<{
 const title = props.title;
 const image = props.image;
 
-const truncTitle = title.length > 40 ? title.slice(0, 40) + "..." : title;
-
-await new Promise((resolve) =>
-  setTimeout(resolve, Math.floor(Math.random() * 4000 + 1000))
-);
+// const truncTitle = title.length > 35 ? title.slice(0, 35) + "..." : title;
 </script>
 
 <style scoped lang="scss">
@@ -52,9 +47,27 @@ await new Promise((resolve) =>
 }
 
 .suggestion-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   max-width: 180px;
   max-height: 180px;
   text-align: center;
   margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+  .suggestion-item {
+    min-width: 100px;
+  }
+
+  .suggestion-image {
+    width: 90px;
+  }
+  .suggestion-title {
+    max-width: 100px;
+  }
 }
 </style>
