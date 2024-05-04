@@ -98,7 +98,7 @@ function itemClick(e: MouseEvent) {
 
 .list-item-type,
 .list-item-year {
-  font-size: $itemDetailsSize;
+  font-size: $smallTextSize;
   font-weight: $bodyLight;
   justify-self: center;
 }
