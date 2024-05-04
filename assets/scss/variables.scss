@@ -5,17 +5,23 @@ $bodyFont: 'Merriweather Sans', sans-serif;
 /* COLORS */
 $bgColor: #0B1B33;
 $bgColorHover: #1A2E4A;
+$bgColorTransparent: #0b1b3380;
 $fontColor: #ffffff;
 $fontColorHover: #c9cfd8;
+$fontColorTransparent: rgba(255, 255, 255, 0.5);
 $accentColor: #D65422;
 $accentColorHover: #ce461c;
+$accentColorTransparent: #d6552280;
+$errorColor: #ff0000;
+$validColor: #00ff00;
+
 
 /* FONT SIZES */
 $h1Size: 2.5rem;
 $h2Size: 2rem;
 $h3Size: 1.5rem;
 $pSize: 1rem;
-$itemDetailsSize: 0.75rem;
+$smallTextSize: 0.75rem;
 
 /* FONT WEIGHTS */
 $headingLight: 300;
