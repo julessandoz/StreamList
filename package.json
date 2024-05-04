@@ -11,13 +11,17 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.4.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@supabase/supabase-js": "^2.42.4",
     "nuxt": "^3.11.1",
+    "pinia": "^2.1.7",
     "sass": "^1.72.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/supabase": "^1.2.1",
     "nuxt-icon": "^0.6.10"
   }
 }

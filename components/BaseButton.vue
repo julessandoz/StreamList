@@ -1,5 +1,9 @@
 <template>
-  <button :class="`btn ${btnStyle} ${btnColor}`" @click="$emit('btnClicked')">
+  <button
+    :class="`btn ${btnStyle} ${btnColor}`"
+    :type="props.type"
+    @click="$emit('btnClicked')"
+  >
     <IconCSS v-if="props.icon" class="btn-icon" :name="props.icon" :size="iconSize" />
     <span v-if="props.text" class="btn-text">
       {{ props.text }}
@@ -9,10 +13,11 @@
 
 <script lang="ts" setup>
 const props = defineProps<{
-  text: string | null;
-  icon: string | null;
+  text?: string | null;
+  icon?: string | null;
   size: "sm" | "md" | "lg";
-  type: "outline" | "filled";
+  type: "button" | "submit";
+  btnStyle: "outline" | "filled";
   color: "default" | "accent";
 }>();
 
@@ -30,7 +35,7 @@ const textSizing = {
 
 const iconSize = iconSizing[props.size];
 const textSize = textSizing[props.size];
-const btnStyle = props.type === "outline" ? "btn-outline" : "btn-filled";
+const btnStyle = props.btnStyle === "outline" ? "btn-outline" : "btn-filled";
 const btnColor = props.color === "default" ? "btn-default" : "btn-accent";
 </script>
 
