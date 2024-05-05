@@ -38,7 +38,7 @@ watch(
   async () => {
     if (user.value) {
       if (await checkIfReturning(user.value.id)) {
-        authStore.setUser(user.value, userProfile.value);
+        authStore.setUserAndProfile(user.value, userProfile.value);
         return navigateTo("/landing");
       }
       return navigateTo("/completeProfile");
