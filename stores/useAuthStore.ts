@@ -17,9 +17,12 @@ export const useAuthStore = defineStore("auth", {
     }
   },
   actions: {
-    setUser(authUser: User, profile: UserProfile) {
+    setUserAndProfile(authUser: User, profile: UserProfile) {
       this.user = authUser;
       this.profile = profile
+    },
+    setUser(authUser: User) {
+      this.user = authUser;
     },
     setProfile(profile: UserProfile){
       this.profile = profile;

@@ -9,10 +9,16 @@
 </template>
 
 <script setup lang="ts">
-const authStore = useAuthStore();
-const user = authStore.getUser;
-console.log(user);
-if (user.profile) {
+const user = useSupabaseUser();
+const userHasProfile = await useProfileCheck();
+
+console.log(user.value);
+
+if (!user.value) {
+  navigateTo("/login");
+}
+
+if (userHasProfile) {
   navigateTo("/home");
 }
 </script>

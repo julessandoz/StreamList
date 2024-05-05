@@ -227,7 +227,7 @@ const submitForm = async () => {
       };
       const { error: upsertError } = await supabase.from("Users").upsert(userData);
 
-      authStore.setUser(user.value as User, userData);
+      authStore.setUserAndProfile(user.value as User, userData);
     } catch (error) {
       console.error(error);
     } finally {
