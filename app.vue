@@ -19,7 +19,7 @@ const userHasProfile = await useProfileCheck();
 const currentRoute = useRoute();
 console.log(currentRoute.path);
 
-if (user.value && !userHasProfile && currentRoute.path !== "/completeProfile") {
-  navigateTo("/completeProfile");
+if (user.value && !userHasProfile && currentRoute.path !== "/auth/completeProfile") {
+  navigateTo("/auth/completeProfile");
 }
 </script>

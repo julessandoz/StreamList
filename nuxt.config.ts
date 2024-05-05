@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     redirect: false,
     redirectOptions: {
       login: '/landing',
-      callback: '/confirm',
+      callback: '/auth/confirm',
       include: undefined,
       exclude: [],
       cookieRedirect: false,

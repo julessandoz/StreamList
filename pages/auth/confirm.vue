@@ -41,7 +41,7 @@ watch(
         authStore.setUserAndProfile(user.value, userProfile.value);
         return navigateTo("/landing");
       }
-      return navigateTo("/completeProfile");
+      return navigateTo("/auth/completeProfile");
     }
   },
   { immediate: true }
