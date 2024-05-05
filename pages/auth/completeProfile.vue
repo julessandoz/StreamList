@@ -15,7 +15,7 @@ const userHasProfile = await useProfileCheck();
 console.log(user.value);
 
 if (!user.value) {
-  navigateTo("/login");
+  navigateTo("/auth/login");
 }
 
 if (userHasProfile) {
