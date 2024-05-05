@@ -7,7 +7,7 @@
       btnStyle="filled"
       type="button"
       color="accent"
-      @btnClicked="navigateTo('/login')"
+      @btnClicked="navigateTo('/auth/login')"
     />
   </div>
   <div class="banner">
