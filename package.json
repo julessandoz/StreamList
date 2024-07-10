@@ -13,6 +13,7 @@
     "@nuxt/image": "^1.4.0",
     "@pinia/nuxt": "^0.5.1",
     "@supabase/supabase-js": "^2.42.4",
+    "fast-levenshtein": "^3.0.0",
     "nuxt": "^3.11.1",
     "pinia": "^2.1.7",
     "sass": "^1.72.0",

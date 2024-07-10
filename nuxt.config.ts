@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
+    TMDB_API: process.env.TMDB_API_URL || 'https://api.themoviedb.org/',
+    TMDB_KEY: process.env.TMDB_API_KEY || 'USE .ENV FOR YOUR KEYS',
     public: {
       appURL: process.env.APP_URL || 'http://localhost:3000'
     }
